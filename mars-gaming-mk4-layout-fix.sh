@@ -3,7 +3,7 @@
 # *** Mappings for Mars Gaming MK4 Mechanical Gaming Keyboard ***
 # Fixes inverted period and comma case in all locales having M key followed by , and . keys (I.E: Italian).
 # The keyboard normally outputs ; instead of , and : instead of . when SHIFT is not pressed.
-# This script addresses the problem. Meant to be run at startup (i.e. in intr.d or similar).
+# This script addresses the problem.
 #
 # How does it work?
 # This script was made identifying keys mapping with xmodmap. I.e:
