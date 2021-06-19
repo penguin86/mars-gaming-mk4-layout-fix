@@ -30,7 +30,16 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+# Mars gaming MK4 keyboard USB ID
+USBID='04b4:6021'
 
-xmodmap -e "keycode  59 = semicolon comma less dead_acute multiply"
-xmodmap -e "keycode  60 = colon period greater periodcentered dead_diaeresis"
+# Prevents the fix from running if the keyboard isn't connected
+if lsusb | grep -q "$USBID"; then
+	xmodmap -e "keycode  59 = semicolon comma less dead_acute multiply"
+	xmodmap -e "keycode  60 = colon period greater periodcentered dead_diaeresis"
+	echo "Keymap patch applied."
+	exit 0
+fi
 
+echo "Mars gaming MK4 keyboard not found. Exiting."
+exit 1
